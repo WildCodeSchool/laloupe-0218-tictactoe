@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { PageScoringComponent } from './page-scoring/page-scoring.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageScoringComponent
   ],
   imports: [
     BrowserModule
