@@ -13,13 +13,15 @@ import { environment } from '../environments/environment.service';
 import { AppComponent } from './app.component';
 import { GamepageComponent } from './gamepage/gamepage.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { PageScoringComponent } from './page-scoring/page-scoring.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GamepageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    PageScoringComponent
   ],
   imports: [
     BrowserModule,
