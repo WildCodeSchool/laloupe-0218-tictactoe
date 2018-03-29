@@ -1,0 +1,140 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+
+<section>
+
+  <!--navbar formatting (Laurent's)-->
+
+  <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
+    <div class="nav-brand col-lg-1">
+      <a class="navbar-brand" href="#first">
+        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390486-200.png" class="img-fluid" />
+      </a>
+    </div>
+    <div class="nav navbar-nav offset-8 mb-4">
+      <div class="container scoremenu">
+        <div class="row scomenuç">
+          <a class="nav-item nav-link mr-5" href="#">THE GAME</a>
+          <a class="nav-item nav-link" href="#">LOG OUT</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container pagescoringtitle">
+    <div class="row PSrow">
+      <div class="col-md-12 PStitle">
+        <h1 class="scoreboard">Score Board</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container meetthechampions">
+    <div class="row championstitle">
+      <div class="col-md-6">
+        <h2 class="mtctitle">Meet the Champions ...</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container championstable">
+    <table class="table champions">
+      <thead class="thead-dark little-table-headers">
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">Username</th>
+          <th scope="col"></th>
+          <th scope="col">Wins</th>
+          <th scope="col">Games played</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td class="champs">variable1</td>
+          <td class="champs">avatar1</td>
+          <td class="champs">var1-wins</td>
+          <td class="champs">var1-gamesplayed</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td class="champs">variable2</td>
+          <td class="champs">avatar2</td>
+          <td class="champs">var2-wins</td>
+          <td class="champs">var2-gamesplayed</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td class="champs">variable3</td>
+          <td class="champs">avatar3</td>
+          <td class="champs">var3-wins</td>
+          <td class="champs">var3-gamesplayed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- put search bar here -->
+
+  <div class="bar findrank">
+    <!-- Create a binding between the searchString model and the text field -->
+    <input type="text" ng-model="searchString" placeholder="Enter username - Find rank" />
+  </div>
+
+  <div class="container otherrankings">
+    <table class="table rankings">
+      <thead class="thead-light little-table-headers">
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">Username</th>
+          <th scope="col"></th>
+          <th scope="col">Wins</th>
+          <th scope="col">Games played</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-success ranksbottom">
+          <th scope=" row ">10</th>
+          <td class="champs ">variable0</td>
+          <td class="champs">avatar0</td>
+          <td class="champs ">var0-wins</td>
+          <td class="champs ">var0-gamesplayed</td>
+        </tr>
+        <tr>
+          <th scope="row ">4</th>
+          <td class="champs ">variable4</td>
+          <td class="champs">avatar4</td>
+          <td class="champs ">var4-wins</td>
+          <td class="champs ">var4-gamesplayed</td>
+        </tr>
+        <tr>
+          <th scope="row ">5</th>
+          <td class="champs ">variable5</td>
+          <td class="champs">avatar5</td>
+          <td class="champs ">var5-wins</td>
+          <td class="champs ">var5-gamesplayed</td>
+        </tr>
+        <tr>
+          <th scope="row ">6</th>
+          <td class="champs ">variable6</td>
+          <td class="champs">avatar6</td>
+          <td class="champs ">var6-wins</td>
+          <td class="champs ">var6-gamesplayed</td>
+        </tr>
+        <tr>
+          <th scope="row ">7</th>
+          <td class="champs ">variable7</td>
+          <td class="champs">avatar7</td>
+          <td class="champs ">var7-wins</td>
+          <td class="champs ">var7-gamesplayed</td>
+        </tr>
+        <tr>
+          <th scope="row ">8</th>
+          <td class="champs ">variable8</td>
+          <td class="champs">avatar8</td>
+          <td class="champs ">var8-wins</td>
+          <td class="champs ">var8-gamesplayed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
