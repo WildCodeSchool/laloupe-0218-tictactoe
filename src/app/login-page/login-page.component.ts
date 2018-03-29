@@ -12,30 +12,30 @@ import { Observable } from 'rxjs/Observable';
 })
 export class LoginPageComponent implements OnInit {
 
-  user:Observable<firebase.User>;
-  authenticated: boolean = false;
+  user: Observable<firebase.User>;
+  authenticated = false;
 
-  constructor(public af:AngularFireAuth) {
+  constructor(public af: AngularFireAuth) {
     this.af.authState.subscribe(
-      (auth) =>{
-        if(auth != null){
+      (auth) => {
+        if (auth != null) {
           this.user = af.authState;
           this.authenticated = true;
         }
       }
-    )
+    );
    }
 
   ngOnInit() {
 
   }
 
-  signInWithGoogle(){
+  signInWithGoogle() {
     this.af.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
     this.authenticated = true;
   }
 
-  signOutWithGoogle(){
+  signOutWithGoogle() {
     this.af.auth.signOut();
     this.authenticated = false;
   }
