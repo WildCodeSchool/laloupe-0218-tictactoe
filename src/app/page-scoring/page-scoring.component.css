@@ -9,13 +9,13 @@
     padding-top: 30px;
     font-size: 34px;
     color: #3ab731;
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 
 .mtctitle {
     font-size: 22px;
     color: black;
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
     text-indent: 10px;
 }
 
@@ -24,11 +24,11 @@ table {
 }
 
 tbody {
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 
 .little-table-headers {
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 
 .bar {
@@ -58,6 +58,6 @@ tbody {
 
 .findrank {
     margin-bottom: 85px;
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
     font-size: 10px;
 }
