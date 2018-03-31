@@ -24,10 +24,10 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.2",
     "angular-font-awesome": "^3.1.2",
     "angular-typing-animation": "^0.5.4",
     "angularfire2": "^5.0.0-rc.6",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.2",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "firebase": "^4.12.0",
@@ -61,6 +61,6 @@
     "stylelint-config-recommended": "^2.1.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
-    "typescript": "^2.6.2"
+    "typescript": ">=2.4.2 <2.7.0"
   }
 }
