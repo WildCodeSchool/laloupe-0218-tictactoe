@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 import * as $ from 'jquery';
 import * as firebase from 'firebase/app';
@@ -15,12 +16,13 @@ export class LoginPageComponent implements OnInit {
   user: Observable<firebase.User>;
   authenticated = false;
 
-  constructor(public af: AngularFireAuth) {
+  constructor(public af: AngularFireAuth, private router: Router) {
     this.af.authState.subscribe(
       (auth) => {
         if (auth != null) {
           this.user = af.authState;
           this.authenticated = true;
+          this.router.navigate(['/game']);
         }
       }
     );
@@ -30,12 +32,12 @@ export class LoginPageComponent implements OnInit {
 
   }
 
-  signInWithGoogle() {
+  logIn() {
     this.af.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
     this.authenticated = true;
   }
 
-  signOutWithGoogle() {
+  logOut() {
     this.af.auth.signOut();
     this.authenticated = false;
   }

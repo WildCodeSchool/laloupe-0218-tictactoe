@@ -21,7 +21,8 @@ import { Route } from '@angular/compiler/src/core';
 const appRoutes: Routes = [
   { path: 'login', component: LoginPageComponent},
   { path: 'game', component: GamepageComponent},
-  { path: 'score', component: PageScoringComponent}
+  { path: 'score', component: PageScoringComponent},
+  { path: '' , component: LoginPageComponent}
 
 ];
 

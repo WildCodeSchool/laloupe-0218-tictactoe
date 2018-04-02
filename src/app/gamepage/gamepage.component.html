@@ -2,15 +2,18 @@
 <!-- NAVBAR gamepage-->
 <div class="body">
   <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
-    <div class="nav-brand col-lg-1">
-      <a class="navbar-brand" href="#first">
+    <div class="nav-brand col-md-1">
+      <a class="navbar-brand" routerLink="/login">
         <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390486-200.png" class="img-fluid" />
       </a>
     </div>
-    <div class="nav navbar-nav offset-8 mb-4">
-      <a class="nav-item nav-link" href="#">SCOREBOARD</a>
-      <a class="nav-item nav-link" href="#">RULES</a>
-      <a class="nav-item nav-link" href="#">LOG OUT</a>
+    <div class="nav navbar-nav offset-8 mt-1 mb-3">
+      <a class="nav-item nav-link mr-5" routerLink="/score">SCOREBOARD</a>
+      <a class="nav-item nav-link mr-5" >RULES</a>
+      <a *ngIf="!af.authState | async as user; else showLogout" class="nav-item nav-link" ></a>
+      <ng-template #showLogout >
+          <a class="nav-item nav-link" (click)="logOut()">LOG OUT</a>
+      </ng-template>
     </div>
   </nav>
 
@@ -33,17 +36,7 @@
 
   <!-- CONTENT FORM gamepage-->
   <div class="row d-flex justify-content-center start">
-    <div class="col-lg-4  d-flex justify-content-center mt-2">
-      <button type="button" class="btn btn-block btn-outline-secondary">
-        <i class="fa fa-google"></i> START</button>
+    <div class="col-md-4  d-flex justify-content-center mt-2">
+      <button type="button" class="btn btn-block">START</button>
     </div>
   </div>
-
-<!-- FOOTER gamepage-->
-<footer>
-  <div class="container-fluid title">
-    <div class="row col-lg-4 offset-10 ">
-  <p id="credits">@Crédits: Alexandra Lee, Laurent Lucas,Paul Morea.</p>
-    </div>
-  </div>
-</footer>

@@ -3,6 +3,12 @@
     border-bottom: 0;
 }
 
+a:hover{
+    border-bottom: 1px solid #3ab731;
+}
+
+
+
 .scoreboard {
     text-align: center;
     height: 120px;
