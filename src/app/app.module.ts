@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 // Libraries
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,12 +17,17 @@ import { GamepageComponent } from './gamepage/gamepage.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PageScoringComponent } from './page-scoring/page-scoring.component';
 import { Route } from '@angular/compiler/src/core';
+import { MatchmakingComponent } from './matchmaking/matchmaking.component';
+
+
 
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginPageComponent},
+
   { path: 'game', component: GamepageComponent},
   { path: 'score', component: PageScoringComponent},
+  { path: 'login' , component: LoginPageComponent},
+  { path: 'match' , component: MatchmakingComponent},
   { path: '' , component: LoginPageComponent}
 
 ];
@@ -31,13 +37,15 @@ const appRoutes: Routes = [
     AppComponent,
     GamepageComponent,
     LoginPageComponent,
-    PageScoringComponent
+    PageScoringComponent,
+    MatchmakingComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

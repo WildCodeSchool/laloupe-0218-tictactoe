@@ -38,4 +38,7 @@ export class GamepageComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  // script bdd 
+  
+
 }
