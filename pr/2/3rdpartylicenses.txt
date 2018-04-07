@@ -201,6 +201,10 @@ THE SOFTWARE.
 MIT
 MIT
 
+@angular/forms@5.2.9
+MIT
+MIT
+
 @angular/platform-browser-dynamic@5.2.9
 MIT
 MIT
