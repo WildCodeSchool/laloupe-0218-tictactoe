@@ -32,7 +32,6 @@ export class GamepageComponent implements OnInit {
 
   }
 
-  
   logOut() {
     this.af.auth.signOut();
     this.authenticated = false;
