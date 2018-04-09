@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   { path: 'score', component: PageScoringComponent},
   { path: 'login' , component: LoginPageComponent},
   { path: 'match' , component: MatchmakingComponent},
-  { path: '' , component: LoginPageComponent}
+  { path: '' , component: LoginPageComponent},
 
 ];
 
@@ -38,7 +38,8 @@ const appRoutes: Routes = [
     GamepageComponent,
     LoginPageComponent,
     PageScoringComponent,
-    MatchmakingComponent
+    MatchmakingComponent,
+
   ],
   imports: [
     BrowserModule,

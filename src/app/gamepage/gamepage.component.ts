@@ -32,13 +32,14 @@ export class GamepageComponent implements OnInit {
 
   }
 
+  
   logOut() {
     this.af.auth.signOut();
     this.authenticated = false;
     this.router.navigate(['/login']);
   }
 
-  // script bdd 
-  
+  // script bdd
+
 
 }

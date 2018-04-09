@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-.gamepage { 
+.gamepage {
     background-image: url('https://c.wallhere.com/photos/84/36/retro_games_computer_joystick_Commodore_64_Wizball_Computer_Game-1206663.jpg!d');
 }
 
@@ -78,4 +78,16 @@ button:hover{
     background-color: white;
     color:gray;
     outline: 0 none;
+}
+
+#rulesModal {
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+}
+
+.smaller {
+  font-size: small;
+}
+
+.simplerules {
+  text-align: justify;
 }
