@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-.gamepage { 
+.gamepage {
     background-image: url('https://c.wallhere.com/photos/84/36/retro_games_computer_joystick_Commodore_64_Wizball_Computer_Game-1206663.jpg!d');
 }
+
 .body{
     min-height: 960px;
-}
-h1{
-    font-size:30px;
-    color: #3ab731;
-    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 
 h4{
@@ -17,7 +13,7 @@ h4{
 }
 
 .otherTitle{
-    font-size:18px;
+    font-size:1em;
     color: gray;
 }
 
@@ -27,6 +23,12 @@ hr{
 
 a:hover{
     border-bottom: 1px solid #3ab731;
+}
+
+h1{
+    font-size:1.8em;
+    color: #3ab731;
+    font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 .underForm{
     width: 28%;
@@ -44,11 +46,6 @@ a:hover{
     color: #3ab731;
 }
 
-input:focus{
-    border-color: rgba(126, 239, 104, 0.8);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #3ab731;
-    outline: 0 none;
-}
 .start{
     margin-top: 20em;
     color: #3ab731;
@@ -58,3 +55,42 @@ input:focus{
     font-size: 10px;
     color: #3ab731;
 }
+
+
+button{
+    background-color: white;
+    border : 0.12em #f2f2f2 solid;
+    color:#AAA;
+}
+
+
+button:focus{
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #3ab731;
+    background-color: white;
+    color:gray;
+    outline: 0 none;
+}
+
+button:hover{
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #3ab731;
+    background-color: white;
+    color:gray;
+    outline: 0 none;
+}
+
+#rulesModal {
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+}
+
+.simplerules {
+  text-align: justify;
+  font-size: 0.75rem;
+  color: #848484;
+  }
+
+  .modal-title{
+  color:#3ab731;
+  font-size: 2rem;
+  }

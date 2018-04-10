@@ -2,18 +2,44 @@
 <!-- NAVBAR gamepage-->
 <div class="body">
   <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
-    <div class="nav-brand col-lg-1">
-      <a class="navbar-brand" href="#first">
+    <div class="nav-brand col-md-1">
+      <a class="navbar-brand" routerLink="/login">
         <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390486-200.png" class="img-fluid" />
       </a>
     </div>
-    <div class="nav navbar-nav offset-8 mb-4">
-      <a class="nav-item nav-link" href="#">SCOREBOARD</a>
-      <a class="nav-item nav-link" href="#">RULES</a>
-      <a class="nav-item nav-link" href="#">LOG OUT</a>
+    <div class="nav navbar-nav offset-8 mt-1 mb-3">
+      <a class="nav-item nav-link mr-5" routerLink="/score">SCOREBOARD</a>
+      <a class="nav-item nav-link mr-5" data-toggle="modal" data-target="#rulesModal">RULES
+      </a>
+<!-- Rules Modal-->
+
+      <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="rulesModal">The Rules</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body"><span class="simplerules">
+              X's always go first. The object is to get three in a row. One player is known as X's and the other is
+O's. Players alternate placing their X's and O's on the game board until either player has three in a row, or all nine
+squares are filled. In the event that no one has three in a row, the stalemate is called a cat game.</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end Rules Modal-->
+      <a *ngIf="!af.authState | async as user; else showLogout" class="nav-item nav-link" ></a>
+      <ng-template #showLogout >
+          <a class="nav-item nav-link" (click)="logOut()">LOG OUT</a>
+      </ng-template>
     </div>
   </nav>
-
   <hr>
 
   <!-- TITLE gamepage-->
@@ -33,17 +59,7 @@
 
   <!-- CONTENT FORM gamepage-->
   <div class="row d-flex justify-content-center start">
-    <div class="col-lg-4  d-flex justify-content-center mt-2">
-      <button type="button" class="btn btn-block btn-outline-secondary">
-        <i class="fa fa-google"></i> START</button>
+    <div class="col-md-4  d-flex justify-content-center mt-2">
+      <button type="button" class="btn btn-block">START</button>
     </div>
   </div>
-
-<!-- FOOTER gamepage-->
-<footer>
-  <div class="container-fluid title">
-    <div class="row col-lg-4 offset-10 ">
-  <p id="credits">@Crédits: Alexandra Lee, Laurent Lucas,Paul Morea.</p>
-    </div>
-  </div>
-</footer>
