@@ -84,10 +84,13 @@ button:hover{
   font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 
-.smaller {
-  font-size: small;
-}
-
 .simplerules {
   text-align: justify;
-}
+  font-size: 0.75rem;
+  color: #848484;
+  }
+
+  .modal-title{
+  color:#3ab731;
+  font-size: 2rem;
+  }
