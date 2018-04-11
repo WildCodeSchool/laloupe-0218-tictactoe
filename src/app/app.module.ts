@@ -1,6 +1,7 @@
+import { AuthService } from './auth.service';
 // Angular imports
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Libraries
@@ -16,17 +17,17 @@ import { AppComponent } from './app.component';
 import { GamepageComponent } from './gamepage/gamepage.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PageScoringComponent } from './page-scoring/page-scoring.component';
+import { MatchMakingComponent } from './match-making/match-making.component';
 import { Route } from '@angular/compiler/src/core';
-
-
 
 
 
 const appRoutes: Routes = [
 
-  { path: 'game', component: GamepageComponent},
+  { path: 'game/:id', component: GamepageComponent},
   { path: 'score', component: PageScoringComponent},
   { path: 'login' , component: LoginPageComponent},
+  { path: 'matchmaking', component: MatchMakingComponent },
   { path: '' , component: LoginPageComponent},
 
 ];
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     AppComponent,
     GamepageComponent,
     LoginPageComponent,
-    PageScoringComponent
+    PageScoringComponent,
+    MatchMakingComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
