@@ -22,21 +22,14 @@ import { Route } from '@angular/compiler/src/core';
 import { CrewComponent } from './crew/crew.component';
 
 
-
-
 const appRoutes: Routes = [
 
   { path: 'game/:id', component: GamepageComponent},
   { path: 'score', component: PageScoringComponent},
-<<<<<<< HEAD
   { path: 'login', component: LoginPageComponent},
-  { path: '', component: LoginPageComponent},
   { path: 'crew', component: CrewComponent},
-=======
-  { path: 'login' , component: LoginPageComponent},
   { path: 'matchmaking', component: MatchMakingComponent },
   { path: '' , component: LoginPageComponent},
->>>>>>> LMatchMaking
 
 ];
 
@@ -46,11 +39,8 @@ const appRoutes: Routes = [
     GamepageComponent,
     LoginPageComponent,
     PageScoringComponent,
-<<<<<<< HEAD
-    CrewComponent
-=======
+    CrewComponent,
     MatchMakingComponent
->>>>>>> LMatchMaking
   ],
   imports: [
     BrowserModule,
