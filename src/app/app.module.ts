@@ -1,6 +1,7 @@
+import { AuthService } from './auth.service';
 // Angular imports
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Libraries
@@ -16,21 +17,26 @@ import { AppComponent } from './app.component';
 import { GamepageComponent } from './gamepage/gamepage.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PageScoringComponent } from './page-scoring/page-scoring.component';
+import { MatchMakingComponent } from './match-making/match-making.component';
 import { Route } from '@angular/compiler/src/core';
 import { CrewComponent } from './crew/crew.component';
 
 
 
 
-
-
 const appRoutes: Routes = [
 
-  { path: 'game', component: GamepageComponent},
+  { path: 'game/:id', component: GamepageComponent},
   { path: 'score', component: PageScoringComponent},
+<<<<<<< HEAD
   { path: 'login', component: LoginPageComponent},
   { path: '', component: LoginPageComponent},
   { path: 'crew', component: CrewComponent},
+=======
+  { path: 'login' , component: LoginPageComponent},
+  { path: 'matchmaking', component: MatchMakingComponent },
+  { path: '' , component: LoginPageComponent},
+>>>>>>> LMatchMaking
 
 ];
 
@@ -40,7 +46,11 @@ const appRoutes: Routes = [
     GamepageComponent,
     LoginPageComponent,
     PageScoringComponent,
+<<<<<<< HEAD
     CrewComponent
+=======
+    MatchMakingComponent
+>>>>>>> LMatchMaking
   ],
   imports: [
     BrowserModule,
@@ -51,7 +61,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

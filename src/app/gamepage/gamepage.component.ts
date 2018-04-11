@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import { Room } from '../models/room';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 
 @Component({
@@ -14,31 +17,33 @@ import { Observable } from 'rxjs/Observable';
 })
 export class GamepageComponent implements OnInit {
 
+  roomId: String;
+  room: Room;
   user: Observable<firebase.User>;
   authenticated = false;
 
-  constructor(public af: AngularFireAuth, private router: Router) {
-    this.af.authState.subscribe(
-      (auth) => {
-        if (auth != null) {
-          this.user = af.authState;
-          this.authenticated = true;
-        }
-      }
-    );
-   }
+  constructor(
+    public authService: AuthService,
+    private aRoute: ActivatedRoute,
+    private router: Router,
+    private db: AngularFirestore) { }
 
   ngOnInit() {
 
-  }
+    this.roomId = this.aRoute.snapshot.paramMap.get('id');
+    this.db
+      .doc<Room>('rooms/' + this.roomId)
+      .valueChanges()
+      .subscribe((room) => {
+        this.room = room;
+        console.log(room);
+
+      });
+    }
 
   logOut() {
-    this.af.auth.signOut();
-    this.authenticated = false;
-    this.router.navigate(['/login']);
+      this.authService.logout();
+      this.router.navigate(['/login']);
   }
-
-  // script bdd
-
 
 }

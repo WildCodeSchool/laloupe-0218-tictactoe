@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 import * as $ from 'jquery';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+
+import { AuthService } from './../auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -14,32 +16,28 @@ import { Observable } from 'rxjs/Observable';
 export class LoginPageComponent implements OnInit {
 
   user: Observable<firebase.User>;
-  authenticated = false;
 
-  constructor(public af: AngularFireAuth, private router: Router) {
-    this.af.authState.subscribe(
-      (auth) => {
-        if (auth != null) {
-          this.user = af.authState;
-          this.authenticated = true;
-          this.router.navigate(['/game']);
-        }
-      }
-    );
-   }
+  private authSubscription: Subscription;
+
+  constructor(
+    public authService: AuthService,
+    private router: Router) {}
+
 
   ngOnInit() {
-
+    this.authSubscription = this.authService.authState.subscribe((user) => {
+      if (user) {
+        this.router.navigate(['/matchmaking']);
+      }
+    });
   }
 
   logIn() {
-    this.af.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider());
-    this.authenticated = true;
+    this.authService.login();
   }
 
   logOut() {
-    this.af.auth.signOut();
-    this.authenticated = false;
+    this.authService.logout();
   }
 
 }
