@@ -38,11 +38,11 @@ export class MatchMakingComponent implements OnInit, OnDestroy {
   getRooms() {
     const roomsCollection = this.db.collection<Room>('rooms');
 
-    const snapshot = roomsCollection.snapshotChanges().take(1).subscribe((snapshot) => {
+    const snapshot = roomsCollection.snapshotChanges().take(1).subscribe((snap) => {
       const player = new Player();
       player.name = this.authService.name;
 
-      for (const snapshotItem of snapshot) {
+      for (const snapshotItem of snap) {
         const roomId = snapshotItem.payload.doc.id;
         const room = snapshotItem.payload.doc.data() as Room;
 
@@ -54,11 +54,11 @@ export class MatchMakingComponent implements OnInit, OnDestroy {
         }
       }
 
-      const room = new Room();
-      room.players = {};
-      room.players[this.authService.authId] = player;
+      const newRoom = new Room();
+      newRoom.players = {};
+      newRoom.players[this.authService.authId] = player;
       this.db.collection('rooms')
-        .add(JSON.parse(JSON.stringify(room)))
+        .add(JSON.parse(JSON.stringify(newRoom)))
         .then((doc) => {
           this.router.navigate(['game', doc.id]);
         });
