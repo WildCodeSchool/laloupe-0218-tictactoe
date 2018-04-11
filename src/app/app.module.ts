@@ -17,6 +17,8 @@ import { GamepageComponent } from './gamepage/gamepage.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PageScoringComponent } from './page-scoring/page-scoring.component';
 import { Route } from '@angular/compiler/src/core';
+import { CrewComponent } from './crew/crew.component';
+
 
 
 
@@ -26,8 +28,9 @@ const appRoutes: Routes = [
 
   { path: 'game', component: GamepageComponent},
   { path: 'score', component: PageScoringComponent},
-  { path: 'login' , component: LoginPageComponent},
-  { path: '' , component: LoginPageComponent},
+  { path: 'login', component: LoginPageComponent},
+  { path: '', component: LoginPageComponent},
+  { path: 'crew', component: CrewComponent},
 
 ];
 
@@ -36,7 +39,8 @@ const appRoutes: Routes = [
     AppComponent,
     GamepageComponent,
     LoginPageComponent,
-    PageScoringComponent
+    PageScoringComponent,
+    CrewComponent
   ],
   imports: [
     BrowserModule,

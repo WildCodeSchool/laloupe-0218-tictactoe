@@ -1,0 +1,65 @@
+<!-- NAVBAR crewpage-->
+
+  <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
+    <div class="nav-brand col-md-1">
+      <a class="navbar-brand" routerLink="/login">
+        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390486-200.png" class="img-fluid" />
+      </a>
+    </div>
+    <div class="nav navbar-nav offset-8 mt-1 mb-3">
+      <a class="nav-item nav-link mr-5" routerLink="/game">GAME</a>
+      <a *ngIf="!af.authState | async as user; else showLogout" class="nav-item nav-link" ></a>
+      <ng-template #showLogout >
+          <a class="nav-item nav-link" (click)="logOut()">LOG OUT</a>
+      </ng-template>
+    </div>
+  </nav>
+
+  <div class="container title">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center mt-5">
+        <h1>ABOUT</h1>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <h1>THE CREW</h1>
+      </div>
+      <hr/>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 offset-md-2 justify-content-center wcsblob">
+        <p>This site was made by Laurent Lucas, Alexandra Lee and Paul Morea, web developers in training at WILD CODE SCHOOL (La Loupe, France).  We used an ensemble of Google products, namely, Angular 5 and Cloud Firebase to create this game and stock our data.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card nous" style="width: 18rem;">
+          <img class="card-img-top" src="../assets/images/lucas_laurent.JPG" alt="The one and only Laurent Lucas">
+          <div class="card-body">
+            <p class="card-text">Laurent, web enthousiaste and young web developer at 23 years old, has been addicted to computers since a very young age. He dreams of creating a start-up that will change the world. Otherwise, he will continue to increase his muscle mass. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card nous" style="width: 18rem;">
+          <img class="card-img-top" src="../assets/images/lee_alexandra.JPG" alt="Alexandra Lee">
+          <div class="card-body">
+            <p class="card-text">Alexandra was formerly a law librarian in California. An avid tic tac toe player in her distant childhood, today she enjoys tennis, baking, and riding horses. However, these days she spends all her free time learning coding with the goal to make blockchains for lawyers in the near future.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card nous" style="width: 18rem;">
+          <img class="card-img-top" src="../assets/images/morea_paul.JPG" alt="The Ladies Man: Paul Morea">
+          <div class="card-body">
+            <p class="card-text">Paul is 75% Norman and 25% Italian. His two passions are new technology and garden gnomes. When he was a little boy he loved to play tic tac toe. Today his favorite hobby is Aqua-Poney. But seriously, when he grows up he would like to develop awesome websites and travel in space.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

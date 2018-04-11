@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+a:hover{
+  border-bottom: 1px solid #3ab731;
+}
+
+h1{
+  font-size:1.8em;
+  color: #3ab731;
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+}
+
+hr{
+  width: 50%;
+}
+
+.wcsblob {
+  justify-content: justify;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: .80em;
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+}
+
+.nous {
+  border: none;
+}
+
+.card-img-top {
+  width: 50%;
+  transform: translate(-50%);
+  margin-left: 50%;
+}
+
+.card-text {
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+  font-size: .65em;
+}
