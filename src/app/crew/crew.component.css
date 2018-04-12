@@ -37,6 +37,10 @@ hr{
   font-size: .65em;
 }
 
+.green {
+  color: #3ab731;
+}
+
 .wcslogo {
   width: 150px;
   transform: translate(68px);
