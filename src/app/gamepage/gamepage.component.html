@@ -1,4 +1,3 @@
-
 <!-- NAVBAR gamepage-->
 <div class="body">
   <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
@@ -11,7 +10,7 @@
       <a class="nav-item nav-link mr-5" routerLink="/score">SCOREBOARD</a>
       <a class="nav-item nav-link mr-5" data-toggle="modal" data-target="#rulesModal">RULES
       </a>
-<!-- Rules Modal-->
+      <!-- Rules Modal-->
 
       <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -22,10 +21,11 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body"><span class="simplerules">
-              X's always go first. The object is to get three in a row. One player is known as X's and the other is
-O's. Players alternate placing their X's and O's on the game board until either player has three in a row, or all nine
-squares are filled. In the event that no one has three in a row, the stalemate is called a cat game.</span>
+            <div class="modal-body">
+              <span class="simplerules">
+                X's always go first. The object is to get three in a row. One player is known as X's and the other is O's. Players alternate
+                placing their X's and O's on the game board until either player has three in a row, or all nine squares are
+                filled. In the event that no one has three in a row, the stalemate is called a cat game.</span>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
@@ -34,9 +34,9 @@ squares are filled. In the event that no one has three in a row, the stalemate i
         </div>
       </div>
       <!-- end Rules Modal-->
-      <a *ngIf="!af.authState | async as user; else showLogout" class="nav-item nav-link" ></a>
-      <ng-template #showLogout >
-          <a class="nav-item nav-link" (click)="logOut()">LOG OUT</a>
+      <a *ngIf="!authService.authState | async as user; else showLogout" class="nav-item nav-link"></a>
+      <ng-template #showLogout>
+        <a class="nav-item nav-link" (click)="logOut()">LOG OUT</a>
       </ng-template>
     </div>
   </nav>
@@ -56,6 +56,28 @@ squares are filled. In the event that no one has three in a row, the stalemate i
       </div>
     </div>
   </div>
+
+  <!-- AVATAR -->
+
+  <div class="col-md-6 player1">
+    {{player1}}
+    <img src="{{player1Image}}" class="img-fluid rounded-circle imgPlayer" alt="">
+  </div>
+  <div class="col-md-6 nbVictoire">
+    <p>nb victoire: </p>
+  </div>
+
+  <div class="col-md-6 player2">
+    {{player2}}
+    <img src="{{player2Image}}" class="img-fluid rounded-circle imgPlayer" alt="">
+  </div>
+  <div class="col-md-6 nbVictoire2">
+    <p>nb victoire: </p>
+  </div>
+
+
+
+
 
   <!-- CONTENT FORM gamepage-->
   <div class="row d-flex justify-content-center start">
