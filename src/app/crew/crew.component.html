@@ -8,7 +8,6 @@
     </div>
     <div class="nav navbar-nav offset-9 mt-1 mb-3">
       <a class="nav-item nav-link mr-5" routerLink="/login">LOG IN</a>
-      <a *ngIf="!af.authState | async as user; else showLogout" class="nav-item nav-link" ></a>
     </div>
   </nav>
 

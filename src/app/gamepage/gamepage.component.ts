@@ -137,7 +137,7 @@ export class GamepageComponent implements OnInit {
     this.db.doc<Room>('rooms/' + this.roomId).update(this.room);
   }
 
-  playAgain(){
+  playAgain() {
     this.router.navigate(['matchmaking']);
   }
 }
