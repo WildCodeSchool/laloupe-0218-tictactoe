@@ -36,3 +36,12 @@ hr{
   font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
   font-size: .65em;
 }
+
+.green {
+  color: #3ab731;
+}
+
+.wcslogo {
+  width: 150px;
+  transform: translate(68px);
+}
