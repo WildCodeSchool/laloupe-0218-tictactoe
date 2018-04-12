@@ -41,6 +41,7 @@ export class MatchMakingComponent implements OnInit, OnDestroy {
     const snapshot = roomsCollection.snapshotChanges().take(1).subscribe((snap) => {
       const player = new Player();
       player.name = this.authService.name;
+      player.image = this.authService.image;
 
       for (const snapshotItem of snap) {
         const roomId = snapshotItem.payload.doc.id;

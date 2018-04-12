@@ -1,3 +1,4 @@
+import { Player } from './../models/player';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -19,6 +20,10 @@ export class GamepageComponent implements OnInit {
 
   roomId: String;
   room: Room;
+  player1: String;
+  player1Image: String;
+  player2Image: String;
+  player2: String;
   user: Observable<firebase.User>;
   authenticated = false;
 
@@ -36,8 +41,10 @@ export class GamepageComponent implements OnInit {
       .valueChanges()
       .subscribe((room) => {
         this.room = room;
-        console.log(room);
-
+        this.player1 = this.room.players[Object.keys(this.room.players)[0]].name;
+        this.player2 = this.room.players[Object.keys(this.room.players)[1]].name;
+        this.player1Image = this.room.players[Object.keys(this.room.players)[0]].image;
+        this.player2Image = this.room.players[Object.keys(this.room.players)[1]].image;
       });
     }
 
@@ -45,5 +52,5 @@ export class GamepageComponent implements OnInit {
       this.authService.logout();
       this.router.navigate(['/login']);
   }
-
+  
 }
