@@ -44,11 +44,8 @@
     </div>
     <div class="row d-flex justify-content-center">
       <div class="col-md-4">
-        <div *ngIf="af.authState | async as user; else showLogin">
+        <div *ngIf="authService.authState | async as user; else showLogin">
             <button type="button" class="btn btn-block" (click)="logOut()">Log out</button>
-            {{user.displayName}}
-            {{user.uid}}
-            {{user.email}}
         </div>
         <ng-template #showLogin >
           <button type="button" class="btn btn-block" (click)="logIn()">

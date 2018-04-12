@@ -34,7 +34,7 @@ squares are filled. In the event that no one has three in a row, the stalemate i
         </div>
       </div>
       <!-- end Rules Modal-->
-      <a *ngIf="!af.authState | async as user; else showLogout" class="nav-item nav-link" ></a>
+      <a *ngIf="!authService.authState | async as user; else showLogout" class="nav-item nav-link" ></a>
       <ng-template #showLogout >
           <a class="nav-item nav-link" (click)="logOut()">LOG OUT</a>
       </ng-template>
