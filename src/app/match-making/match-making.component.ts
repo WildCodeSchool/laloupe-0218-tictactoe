@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/take';
 import { Router } from '@angular/router';
+import { Line } from '../models/line';
 
 @Component({
   selector: 'app-match-making',
@@ -57,7 +58,11 @@ export class MatchMakingComponent implements OnInit, OnDestroy {
 
       const newRoom = new Room();
       newRoom.players = {};
+      newRoom.grid = this.generateGrid();
       newRoom.players[this.authService.authId] = player;
+      newRoom.turn = this.authService.authId;
+      newRoom.winner = '0';
+
       this.db.collection('rooms')
         .add(JSON.parse(JSON.stringify(newRoom)))
         .then((doc) => {
@@ -71,4 +76,21 @@ export class MatchMakingComponent implements OnInit, OnDestroy {
     this.authService.logout();
     this.router.navigate(['login']);
   }
+
+  generateGrid(): Line[] {
+    const grid: Line[] = [];
+    let y = 0;
+    while (y < 3) {
+      grid[y] = new Line();
+      let x = 0;
+      while (x < 3) {
+        grid[y].cells[x] = 0;
+        x += 1;
+      }
+      y += 1;
+    }
+    return grid;
+  }
+
+
 }

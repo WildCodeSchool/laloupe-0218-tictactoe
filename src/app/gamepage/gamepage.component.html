@@ -59,29 +59,35 @@
 
   <!-- AVATAR -->
 
-  <div class="col-md-6 player1">
-    {{player1}}
-    <img src="{{player1Image}}" class="img-fluid rounded-circle imgPlayer" alt="">
-  </div>
-  <div class="col-md-6 nbVictoire">
-    <p>nb victoire: </p>
-  </div>
-
-  <div class="col-md-6 player2">
-    {{player2}}
-    <img src="{{player2Image}}" class="img-fluid rounded-circle imgPlayer" alt="">
-  </div>
-  <div class="col-md-6 nbVictoire2">
-    <p>nb victoire: </p>
-  </div>
-
-
-
-
-
-  <!-- CONTENT FORM gamepage-->
-  <div class="row d-flex justify-content-center start">
-    <div class="col-md-4  d-flex justify-content-center mt-2">
-      <button type="button" class="btn btn-block">START</button>
+  <div *ngIf="room">
+    <div class="col-md-6 player1">
+      {{ me.name }}
+      <img src="{{ me.image }}" class="img-fluid rounded-circle imgPlayer" alt="">
     </div>
+    <div class="col-md-6 nbVictoire">
+      <p>nb victoire: </p>
+      <p *ngIf="isMyTurn()">A mon tour</p>
+    </div>
+
+    <div class="col-md-6 player2">
+      {{ opponent.name }}
+      <img src="{{ opponent.image }}" class="img-fluid rounded-circle imgPlayer" alt="">
+    </div>
+    <div class="col-md-6 nbVictoire2">
+      <p>nb victoire: </p>
+      <p *ngIf="!isMyTurn()">A son tour</p>
+    </div>
+
+
+    <div class="tictactoe container">
+      <div class="line" *ngFor="let line of room.grid; let y = index">
+        <div class="cell" *ngFor="let cell of line.cells let x = index" (click)="cellClicked(y, x)">
+          {{cell}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="room.winner !== '0' ">
+    {{room.winner}}
+<button (click)=playAgain() >Play again</button>
   </div>
