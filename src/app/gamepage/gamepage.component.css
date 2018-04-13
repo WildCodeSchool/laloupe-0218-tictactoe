@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-
 .gamepage {
     background-image: url('https://c.wallhere.com/photos/84/36/retro_games_computer_joystick_Commodore_64_Wizball_Computer_Game-1206663.jpg!d');
 }
@@ -95,34 +94,44 @@ button:hover {
     font-size: 2rem;
 }
 
-.player1{
+.player1 {
     margin-left: 10%;
     font-size: 1rem;
     color: #3ab731;
     font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 
-.nbVictoire{
+.nbVictoire {
     margin-left: 10%;
     font-size: 1rem;
     color: #848484;
 }
 
-
-.player2{
-    margin-top:-6%;
+.player2 {
+    margin-top: -6%;
     margin-left: 75%;
     font-size: 1rem;
     color: #3ab731;
     font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
 }
 
-.nbVictoire2{
+.nbVictoire2 {
     margin-left: 75%;
     font-size: 1rem;
     color: #848484;
 }
 
-.imgPlayer{
+.imgPlayer {
     width: 8%;
+}
+
+.cell {
+    display: inline-block;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.tictactoe{
+    margin-left: 40%;
 }

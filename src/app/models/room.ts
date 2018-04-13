@@ -1,8 +1,9 @@
 import { Player } from './player';
+import { Line } from './line';
 
 export class Room {
   players: {};
   turn: string;
   winner: string;
-  grid: string;
+  grid: Line[];
 }
