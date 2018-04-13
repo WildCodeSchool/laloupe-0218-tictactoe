@@ -3,10 +3,10 @@
   <nav class="navbar navbar-expand navbar-light navbar-fixed-top">
     <div class="nav-brand col-md-1">
       <a class="navbar-brand" routerLink="/login">
-        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390486-200.png" class="img-fluid" />
+        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390486-200.png" class="img-fluid" width="50%"/>
       </a>
     </div>
-    <div class="nav navbar-nav offset-8 mt-1 mb-3">
+    <div class="nav navbar-nav offset-8">
       <a class="nav-item nav-link mr-5" routerLink="/score">SCOREBOARD</a>
       <a class="nav-item nav-link mr-5" data-toggle="modal" data-target="#rulesModal">RULES
       </a>
@@ -56,10 +56,6 @@
       </div>
     </div>
   </div>
-  <!-- big computer image-->
-
-      <img class="maincomp" src="../assets/images/retro.png" alt="computer image"/>
-
   <!-- AVATAR -->
 
   <div class="bothplayers" *ngIf="room">
@@ -68,7 +64,9 @@
       <img src="{{ me.image }}" class="img-fluid rounded-circle imgPlayer" alt="">
     </div>
     <div class="col-md-6 myturn">
-      <p *ngIf="isMyTurn()"><span class="turn1">It's my turn.</span></p>
+      <p *ngIf="isMyTurn()">
+        <span class="turn1">It's my turn !</span>
+      </p>
     </div>
 
     <div class="col-md-6 player2">
@@ -76,18 +74,27 @@
       <img src="{{ opponent.image }}" class="img-fluid rounded-circle imgPlayer" alt="">
     </div>
     <div class="col-md-6 myturn2">
-      <p *ngIf="!isMyTurn()">It's your turn.</p>
+      <p *ngIf="!isMyTurn()">
+        <span class="turn2">Waiting ...</span>
+      </p>
     </div>
 
-    <div class="tictactoe container">
+    <div class="tictactoe">
       <div class="line" *ngFor="let line of room.grid; let y = index">
         <div class="cell" *ngFor="let cell of line.cells let x = index" (click)="cellClicked(y, x)">
-          {{cell}}
+          <img class="alienBlack img-fluid" *ngIf="cell === 2" src="../../assets/images/blackalien.png" width="75%">
+          <img class="alienGreen img-fluid" *ngIf="cell === 1" src="../../assets/images/greenalien.png" width="75%">
         </div>
       </div>
     </div>
   </div>
   <div *ngIf="room.winner !== '0' ">
-    {{room.winner}}
-<button (click)=playAgain() >Play again</button>
+    <div class="col-md-12">
+      <div class="col-md-3 offset-5 mx-auto">
+        <button class="btn btn-block btnReplay" (click)=playAgain()>
+          <span class="textPlay"> Play again</span>
+        </button>
+      </div>
+    </div>
+
   </div>
