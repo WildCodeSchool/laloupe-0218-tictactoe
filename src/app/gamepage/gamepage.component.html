@@ -56,28 +56,28 @@
       </div>
     </div>
   </div>
+  <!-- big computer image-->
+
+      <img class="maincomp" src="../assets/images/retro.png" alt="computer image"/>
 
   <!-- AVATAR -->
 
-  <div *ngIf="room">
+  <div class="bothplayers" *ngIf="room">
     <div class="col-md-6 player1">
       {{ me.name }}
       <img src="{{ me.image }}" class="img-fluid rounded-circle imgPlayer" alt="">
     </div>
-    <div class="col-md-6 nbVictoire">
-      <p>nb victoire: </p>
-      <p *ngIf="isMyTurn()">A mon tour</p>
+    <div class="col-md-6 myturn">
+      <p *ngIf="isMyTurn()"><span class="turn1">It's my turn.</span></p>
     </div>
 
     <div class="col-md-6 player2">
       {{ opponent.name }}
       <img src="{{ opponent.image }}" class="img-fluid rounded-circle imgPlayer" alt="">
     </div>
-    <div class="col-md-6 nbVictoire2">
-      <p>nb victoire: </p>
-      <p *ngIf="!isMyTurn()">A son tour</p>
+    <div class="col-md-6 myturn2">
+      <p *ngIf="!isMyTurn()">It's your turn.</p>
     </div>
-
 
     <div class="tictactoe container">
       <div class="line" *ngFor="let line of room.grid; let y = index">
