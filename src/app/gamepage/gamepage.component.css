@@ -99,14 +99,13 @@ button:hover {
     font-size: 1rem;
     color: #3ab731;
     font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
-    transform: translate(0px, 140px);
 }
 
 .turn1 {
-    margin-left: 5%;
-    font-size: 1rem;
-    color: #848484;
-    transform: translate(0px, 160px);
+    margin-left: 10%;
+    font-size: 1.5rem;
+    color: hsl(0, 92%, 45%);
+    text-decoration: underline;
 }
 
 .player2 {
@@ -118,10 +117,12 @@ button:hover {
     
 }
 
-.turn2 {
-    margin-left: 75%;
-    font-size: 1rem;
-    color: #848484;
+.myturn2 p {
+    margin-left: 10%;
+    margin-top: 10% !important;
+    font-size: 1.5rem;
+    color: hsl(0, 92%, 45%);
+    text-decoration: underline;
 }
 
 .imgPlayer {
@@ -130,18 +131,37 @@ button:hover {
 
 .cell {
     display: inline-block;
-    border: 1px solid black;
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0 0 10px 2px #00ff3b;
 }
 
 .tictactoe{
-    margin-left: 40%;
+    margin-left: 39%;
+    margin-right: 0%;
 }
 
-.maincomp {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
+.line{
+    margin-right: 0px;
+}
+
+.alienBlack{
+    display: block;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+
+.alienGreen{
+    display: block;
+    margin-top: 15%;
+    margin-left: 12%;
+}
+
+.btnReplay{
+    background-color: #bcbcbc;
+}
+
+.textPlay{
+    color: black;
+    font-weight: bold;
 }

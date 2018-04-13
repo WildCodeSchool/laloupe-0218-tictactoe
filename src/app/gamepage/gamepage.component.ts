@@ -94,7 +94,6 @@ export class GamepageComponent implements OnInit {
 
   cellClicked(y: number, x: number) {
     if (!this.isMyTurn() || this.room.grid[y].cells[x] !== 0) {
-      console.log('test');
     } else {
 
     this.room.grid[y].cells[x] = this.myPlayerNumber;
@@ -102,7 +101,6 @@ export class GamepageComponent implements OnInit {
     this.db
       .doc<Room>('rooms/' + this.roomId)
       .set(JSON.parse(JSON.stringify(this.room)));
-      console.log('test2');
     this.isWin();
     }
   }
@@ -138,6 +136,6 @@ export class GamepageComponent implements OnInit {
   }
 
   playAgain() {
-    this.router.navigate(['matchmaking']);
+    this.router.navigate(['login']);
   }
 }
