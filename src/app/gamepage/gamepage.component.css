@@ -95,16 +95,18 @@ button:hover {
 }
 
 .player1 {
-    margin-left: 10%;
+    margin-left: 5%;
     font-size: 1rem;
     color: #3ab731;
     font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+    transform: translate(0px, 140px);
 }
 
-.nbVictoire {
-    margin-left: 10%;
+.turn1 {
+    margin-left: 5%;
     font-size: 1rem;
     color: #848484;
+    transform: translate(0px, 160px);
 }
 
 .player2 {
@@ -113,9 +115,10 @@ button:hover {
     font-size: 1rem;
     color: #3ab731;
     font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+    
 }
 
-.nbVictoire2 {
+.turn2 {
     margin-left: 75%;
     font-size: 1rem;
     color: #848484;
@@ -134,4 +137,11 @@ button:hover {
 
 .tictactoe{
     margin-left: 40%;
+}
+
+.maincomp {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 }
